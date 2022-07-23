@@ -64,14 +64,14 @@ const resume = inject<Resume>("resume");
         </ul>
         <p
           v-if="skills"
-          class="mt-2 text-xs font-medium text-slate-700 font-inter inline-block"
+          class="inline-block mt-2 text-xs font-medium text-slate-700 font-inter"
         >
           Skills:
           <p
             v-for="(skill, key) of skills" :key="key"
-            class="text-slate-700 font-normal inline-block"
+            class="inline-block font-normal text-slate-700"
           >
-            {{ skill }}<img src="/icons/Dot.svg" :class="{'hidden': key === skills.length - 1}" class="w-3 inline"/>
+            {{ skill }}<img src="/icons/Dot.svg" :class="{'hidden': key === skills.length - 1}" class="inline w-3"/>
           </p>
         </p>
       </div>
