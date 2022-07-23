@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { inject } from "vue";
-import Divider from "./Divider.vue";
 import { formatDate } from "../helpers/formatDate";
 
 import type { Resume } from "../types/resume";
@@ -33,6 +32,5 @@ const resume = inject<Resume>("resume");
         </p>
       </div>
     </div>
-    <Divider />
   </div>
 </template>

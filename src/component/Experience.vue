@@ -16,7 +16,17 @@ const resume = inject<Resume>("resume");
     <div class="grid grid-cols-1 gap-4">
       <div
         v-for="(
-          { name, position, startDate, endDate, summary, highlights, url }, key
+          {
+            name,
+            position,
+            startDate,
+            endDate,
+            summary,
+            highlights,
+            skills,
+            url,
+          },
+          key
         ) in resume.work"
         :key="key"
       >
@@ -52,6 +62,18 @@ const resume = inject<Resume>("resume");
             {{ highlight }}
           </li>
         </ul>
+        <p
+          v-if="skills"
+          class="mt-2 text-xs font-medium text-slate-700 font-inter inline-block"
+        >
+          Skills:
+          <p
+            v-for="(skill, key) of skills" :key="key"
+            class="text-slate-700 font-normal inline-block"
+          >
+            {{ skill }}<img src="/icons/Dot.svg" :class="{'hidden': key === skills.length - 1}" class="w-3 inline"/>
+          </p>
+        </p>
       </div>
     </div>
     <Divider />

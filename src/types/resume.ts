@@ -46,7 +46,8 @@ export interface Work {
   startDate: IDate;
   endDate: IDate;
   summary: string;
-  highlights: string[];
+  highlights?: string[];
+  skills?: string[];
 }
 
 export interface Education {
