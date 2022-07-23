@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { inject } from "vue";
 import Divider from "./Divider.vue";
+import Badge from "./Badge.vue";
 import { formatDate } from "../helpers/formatDate";
 
 import type { Resume } from "../types/resume";
@@ -25,6 +26,7 @@ const resume = inject<Resume>("resume");
             highlights,
             skills,
             url,
+            badge
           },
           key
         ) in resume.work"
@@ -40,6 +42,7 @@ const resume = inject<Resume>("resume");
             {{ name }},
           </a>
           <p class="ml-1 font-normal text-slate-700">{{ position }}</p>
+          <Badge v-if="badge" :text="badge" />
         </div>
         <h4 class="text-xs font-medium text-slate-500 font-dm-sans">
           {{

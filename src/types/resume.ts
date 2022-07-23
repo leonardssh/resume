@@ -48,6 +48,7 @@ export interface Work {
   summary: string;
   highlights?: string[];
   skills?: string[];
+  badge?: string;
 }
 
 export interface Education {
